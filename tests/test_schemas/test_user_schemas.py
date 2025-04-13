@@ -57,3 +57,16 @@ def test_user_base_invalid_email(user_base_data_invalid):
     with pytest.raises(ValidationError) as exc_info:
         UserBase(**user_base_data_invalid)
     assert "value is not a valid email address" in str(exc_info.value)
+
+# Valid email tests
+@pytest.mark.parametrize("email", [
+    "john.doe@example.com",  # Standard format
+    "user+alias@sub.domain.org",  # With alias and subdomain
+    "user_name123@domain.co",  # With underscore and numbers
+    "123user@domain.com",  # Starting with numbers
+    "user.name@domain.travel",  # Non-standard TLD
+])
+def test_user_base_valid_email(email,user_base_data):
+    user_base_data["email"] = email
+    user = UserBase(**user_base_data)
+    assert user.email == email
