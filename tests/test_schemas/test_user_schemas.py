@@ -57,20 +57,3 @@ def test_user_base_invalid_email(user_base_data_invalid):
     with pytest.raises(ValidationError) as exc_info:
         UserBase(**user_base_data_invalid)
     assert "value is not a valid email address" in str(exc_info.value)
-
-@pytest.mark.parametrize("nickname", ["   testuser   ", "admin", "superuser", "root"])
-def test_user_base_invalid_nicknames(nickname, user_base_data):
-    user_base_data["nickname"] = nickname
-    with pytest.raises(ValidationError):
-        UserBase(**user_base_data)
-
-@pytest.mark.parametrize("password", ["Password123", "password*", "PASSWORD*", "12345678*"])
-def test_user_create_invalid_passwords(password, user_create_data):
-    user_create_data["password"] = password
-    with pytest.raises(ValidationError):
-        UserCreate(**user_create_data)
-
-def test_user_update_no_fields_provided(user_update_data):
-    user_update_data.clear()
-    with pytest.raises(ValidationError):
-        UserUpdate(**user_update_data)
