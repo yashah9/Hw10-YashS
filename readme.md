@@ -45,6 +45,10 @@
    - **Problem**: Users with unverified emails could update their profiles, leading to potential security issues.
    - **Solution**: Added a check to ensure that only verified email users can update their profile information.
 
+### 6. [Unique Username (Nickname) Validation](https://github.com/yashah9/Hw10-YashS/issues/11)
+   - **Problem**: Users could insert the same nickname, which was invalid.
+   - **Solution**: Added unique nickname validation to prevent duplicate usernames during registration.
+
 
 ### Outcomes
 
