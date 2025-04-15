@@ -45,6 +45,10 @@
    - **Problem**: Users with unverified emails could update their profiles, leading to potential security issues.
    - **Solution**: Added a check to ensure that only verified email users can update their profile information.
 
+### 6. [Unique Username (Nickname) Validation](https://github.com/yashah9/Hw10-YashS/issues/11)
+   - **Problem**: Users could insert the same nickname, which was invalid.
+   - **Solution**: Added unique nickname validation to prevent duplicate usernames during registration.
+
 
 ### Outcomes
 
@@ -55,3 +59,6 @@ I also strengthened the application’s validation mechanisms by enforcing stron
 One major security improvement I worked on was preventing users with unverified emails from updating their profiles. This required integrating additional checks into the logic and helped me understand how small oversights can lead to larger security gaps. By resolving this, I ensured better control over user actions based on verification status—an important principle in secure system design.
 
 Throughout the project, I became more confident in using tools like Pytest for automated testing, SQLAlchemy for database operations, and GitHub Issues for project tracking. The collaborative nature of the project emphasized the importance of writing clean, well-documented code and reinforced the value of feedback in a development workflow. This experience has equipped me with stronger skills in designing reliable, user-friendly, and secure backend systems.
+
+## Image on dockerhub
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/16629b1e-c8b2-402d-96b6-a9726ef94dce" />
